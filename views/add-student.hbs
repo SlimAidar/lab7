@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+    <h4>
+        Add a student - <a href="/">Back to menu</a>
+    </h4>
+    <form action="/students/add" method="post">
+        <div class="form-control">
+            <label>studentNumber:</label>
+            <input type="text" name="studentNumber">
+        </div>
+        <div class="form-control">
+            <label>firstName:</label>
+            <input type="text" name="firstName">
+        </div>
+        <div class="form-control">
+            <label>middleName:</label>
+            <input type="text" name="middleName">
+        </div>
+        <div class="form-control">
+            <label>gpa:</label>
+            <input type="number" name="gpa">
+        </div>
+        <div class="form-control">
+            <label>lastName:</label>
+            <input type="text" name="lastName">
+        </div>
+        <div class="form-control">
+            <label>dateOfEnrollment:</label>
+            <input type="date" name="dateOfEnrollment" >
+        </div>
+        <div class="form-control">
+            <input type="submit" value="Add student">
+        </div>
+    </form>
+</div>
+
+</body>
+
+</html>
