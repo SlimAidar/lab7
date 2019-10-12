@@ -5,6 +5,8 @@ import { StudentModule } from './student/student.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import { Student } from './student/student.entity';
+import { TranscriptController } from './transcript/transcript.controller';
+import { TranscriptService } from './transcript/transcript.service';
 
 @Module({
   imports: [StudentModule, TypeOrmModule.forRoot({
@@ -17,8 +19,8 @@ import { Student } from './student/student.entity';
     entities: [Student],
     synchronize: true,
   }) ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, TranscriptController],
+  providers: [AppService, TranscriptService],
 })
 export class AppModule {
   constructor(private readonly connection: Connection) {}
