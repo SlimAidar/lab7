@@ -7,6 +7,8 @@ import { Connection } from 'typeorm';
 import { Student } from './student/student.entity';
 import { TranscriptController } from './transcript/transcript.controller';
 import { TranscriptService } from './transcript/transcript.service';
+import { ClassRoomController } from './class-room/class-room.controller';
+import { ClassRoomModule } from './class-room/class-room.module';
 
 @Module({
   imports: [StudentModule, TypeOrmModule.forRoot({
@@ -18,8 +20,8 @@ import { TranscriptService } from './transcript/transcript.service';
     database: 'lab7',
     entities: [Student],
     synchronize: true,
-  }) ],
-  controllers: [AppController, TranscriptController],
+  }), ClassRoomModule ],
+  controllers: [AppController, TranscriptController, ClassRoomController],
   providers: [AppService, TranscriptService],
 })
 export class AppModule {
