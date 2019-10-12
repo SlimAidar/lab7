@@ -1,6 +1,7 @@
-import { Body, Controller, Get, Post, Render } from '@nestjs/common';
+import { Body, Controller, Get, Post, Redirect, Render } from '@nestjs/common';
 import { StudentService } from './student.service';
 import { StudentDto } from './dto/student.dto';
+import { Student } from './student.entity';
 
 @Controller('students')
 export class StudentController {
@@ -9,7 +10,8 @@ export class StudentController {
   @Get()
   @Render('students')
   async all() {
-    return await this.studentService.findAll();
+    const students: Student[] = await this.studentService.findAll()
+    return {students} ;
   }
 
   @Get('/add')
@@ -19,8 +21,8 @@ export class StudentController {
   }
 
   @Post('/add')
-  @Render('students')
+  @Redirect('/students')
   async add(@Body() student: StudentDto) {
-    return await this.studentService.save(student);
+    await this.studentService.save(student);
   }
 }

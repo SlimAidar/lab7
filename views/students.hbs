@@ -22,13 +22,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>3.6</td>
-            </tr>
+            {{#students}}
+                <tr>
+                    <th scope="row">{{ id }}</th>
+                    <td>{{firstName}}</td>
+                    <td>{{lastName}}</td>
+                    <td>{{middleName}}</td>
+                    <td>{{gpa}}</td>
+                </tr>
+            {{/students}}
             </tbody>
         </table>
     </div>
